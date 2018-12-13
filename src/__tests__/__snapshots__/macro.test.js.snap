@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`macros basic usage: basic usage 1`] = `
+"
+import env from \\"../macro\\";
+const MY_VAR = e(\\"MY_VAR\\");
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const MY_VAR = \\"abc\\";
+
+"
+`;
+
+exports[`macros no usage: no usage 1`] = `
+"
+import env from \\"../macro\\";
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+
+"
+`;

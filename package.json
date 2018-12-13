@@ -1,0 +1,49 @@
+{
+  "name": "env.macro",
+  "description": "babel macro for inlining, coercing and checking environment variables",
+  "version": "0.1.0",
+  "main": "dist/env.macro.js",
+  "license": "MIT",
+  "files": [
+    "dist/"
+  ],
+  "keywords": [
+    "babel",
+    "babel-macros",
+    "babel-plugin-macros"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stereobooster/env.macro.git"
+  },
+  "scripts": {
+    "test": "jest --coverage",
+    "format": "prettier --write",
+    "ci": "npm run test -- --ci && npm run build",
+    "prepare": "npm run build",
+    "build": "microbundle -i src/index.js -o dist",
+    "precommit": "lint-staged"
+  },
+  "dependencies": {
+    "babel-plugin-macros": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-tester": "^5.5.2",
+    "babel-preset-env": "^1.6.1",
+    "jest": "^23.6.0",
+    "prettier": "^1.10.2",
+    "husky": "^1.2.0",
+    "lint-staged": "^8.1.0",
+    "microbundle": "^0.8.3"
+  },
+  "jest": {
+    "testRegex": "__tests__/.*.test.js$"
+  },
+  "lint-staged": {
+    "*.{js,md}": [
+      "prettier --write",
+      "git add -A"
+    ]
+  }
+}
